@@ -41,6 +41,8 @@ var broadcast = function(message) {
       if(!(sockets[i] == this)){
         sockets[i].write('\r' + this.name + ': ' + message);
         displayPrompt(sockets[i]);
+      } else {
+        displayPrompt(this);
       }
     }
   }
